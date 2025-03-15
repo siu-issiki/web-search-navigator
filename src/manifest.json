@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Web Search Navigator",
     "version": "0.5.2",
     "description": "Keyboard shortcuts for Google search, YouTube, Startpage, Brave Search, Google Scholar, Github, Gitlab, and Amazon.",
@@ -18,15 +18,10 @@
     "permissions": ["storage"],
     "options_ui": {
         "page": "options_page.html",
-        "chrome_style": true
+        "open_in_tab": false
     },
     "background": {
-        "scripts": [
-            "browser-polyfill.js",
-            "webext-dynamic-content-scripts.js",
-            "background.js"
-        ],
-        "persistent": false
+        "service_worker": "background.js"
     },
     "content_scripts": [
         {

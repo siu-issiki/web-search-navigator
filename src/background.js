@@ -1,3 +1,8 @@
+// Import browser polyfill
+importScripts('browser-polyfill.js');
+importScripts('webext-dynamic-content-scripts.js');
+
+// Service Worker for Manifest V3
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'tabsCreate') {
     browser.tabs
